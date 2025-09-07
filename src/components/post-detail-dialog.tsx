@@ -85,6 +85,7 @@ export function PostDetailDialog({
         setCommentText("");
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const RoleIcon = roleIcons[post.author.role];
 
     return (
@@ -256,6 +257,7 @@ export function PostDetailDialog({
                         {/* Comments List */}
                         <div className="space-y-4">
                             {comments.map((comment) => {
+                                // eslint-disable-next-line @typescript-eslint/no-unused-vars
                                 const CommentRoleIcon =
                                     roleIcons[comment.author.role];
                                 return (

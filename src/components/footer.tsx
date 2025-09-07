@@ -18,7 +18,7 @@ export function Footer() {
                             </h3>
                         </div>
                         <p className="text-muted-foreground text-sm">
-                            A community united in faith, sharing God's love
+                            A community united in faith, sharing God&apos;s love
                             through fellowship, prayer, and service.
                         </p>
                     </div>
@@ -63,7 +63,7 @@ export function Footer() {
                         our community.
                     </p>
                     <div className="text-sm text-muted-foreground">
-                        "Faith, Hope, Love - these three remain."
+                        &quot;Faith, Hope, Love - these three remain.&quot;
                     </div>
                 </div>
             </div>

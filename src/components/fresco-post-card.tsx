@@ -19,6 +19,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { usePosts } from "@/hooks/use-posts";
 import { formatDistanceToNow } from "date-fns";
 import type { Post } from "@/lib/posts";
+import Image from "next/image";
 
 interface FrescoPostCardProps {
     post: Post;
@@ -50,6 +51,7 @@ const postTypeColors = {
 export function FrescoPostCard({ post, onOpen }: FrescoPostCardProps) {
     const { user } = useAuth();
     const { toggleAmen, toggleBookmark } = usePosts();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const RoleIcon = roleIcons[post.author.role];
 
     const handleAmen = (e: React.MouseEvent) => {
@@ -127,12 +129,16 @@ export function FrescoPostCard({ post, onOpen }: FrescoPostCardProps) {
             {post.mediaType && post.mediaUrl && (
                 <div className="mb-4 rounded-lg overflow-hidden border border-border">
                     {post.mediaType === "image" ? (
-                        <img
-                            src={post.mediaUrl || "/placeholder.svg"}
-                            alt="Post media"
-                            className="w-full h-auto max-h-96 object-cover"
-                            onClick={(e) => e.stopPropagation()}
-                        />
+                        <div className="relative w-full max-h-96 h-auto">
+                            <Image
+                                src={post.mediaUrl || "/placeholder.svg"}
+                                alt="Post media"
+                                width={800} // set a width/height or use fill
+                                height={600}
+                                className="w-full h-auto max-h-96 object-cover"
+                                unoptimized // important if mediaUrl is blob/object
+                            />
+                        </div>
                     ) : post.mediaType === "video" ? (
                         <div className="relative">
                             <video
