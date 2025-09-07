@@ -105,8 +105,8 @@ export function PrayerRequestDialog({
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="bg-muted/30 p-4 rounded-lg">
                         <p className="text-sm text-foreground leading-relaxed">
-                            "Cast all your anxiety on him because he cares for
-                            you." - 1 Peter 5:7
+                            &quot;Cast all your anxiety on him because he cares
+                            for you.&quot; - 1 Peter 5:7
                         </p>
                     </div>
 

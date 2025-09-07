@@ -57,10 +57,10 @@ export default function SermonsPage() {
 
                                 <div className="bg-muted/30 p-4 rounded-lg mb-4">
                                     <p className="text-sm text-foreground leading-relaxed">
-                                        "All Scripture is God-breathed and is
-                                        useful for teaching, rebuking,
+                                        &quot;All Scripture is God-breathed and
+                                        is useful for teaching, rebuking,
                                         correcting and training in
-                                        righteousness." - 2 Timothy 3:16
+                                        righteousness.&quot; - 2 Timothy 3:16
                                     </p>
                                 </div>
 

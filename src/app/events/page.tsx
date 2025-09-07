@@ -88,11 +88,11 @@ export default function EventsPage() {
 
                                 <div className="bg-muted/30 p-4 rounded-lg">
                                     <p className="text-sm text-foreground leading-relaxed">
-                                        "And let us consider how we may spur one
-                                        another on toward love and good deeds,
-                                        not giving up meeting together, as some
-                                        are in the habit of doing, but
-                                        encouraging one another." - Hebrews
+                                        &quot;And let us consider how we may
+                                        spur one another on toward love and good
+                                        deeds, not giving up meeting together,
+                                        as some are in the habit of doing, but
+                                        encouraging one another.&quot; - Hebrews
                                         10:24-25
                                     </p>
                                 </div>

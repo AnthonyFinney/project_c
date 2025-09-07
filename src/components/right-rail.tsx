@@ -41,9 +41,10 @@ export function RightRail() {
                 </CardHeader>
                 <CardContent>
                     <blockquote className="drop-cap text-foreground italic leading-relaxed">
-                        "For truly I tell you, if you have faith the size of a
-                        mustard seed, you can say to this mountain, 'Move from
-                        here to there,' and it will move."
+                        &quot;For truly I tell you, if you have faith the size
+                        of a mustard seed, you can say to this mountain,
+                        &apos;Move from here to there,&apos; and it will
+                        move.&quot;
                     </blockquote>
                     <p className="text-sm text-muted-foreground mt-2 text-right">
                         — Matthew 17:20

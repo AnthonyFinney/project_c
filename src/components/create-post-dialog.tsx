@@ -24,6 +24,7 @@ import { Badge } from "@/components/ui/badge";
 import { X, ImageIcon, Video } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { usePosts } from "@/hooks/use-posts";
+import Image from "next/image";
 
 interface CreatePostDialogProps {
     open: boolean;
@@ -46,6 +47,7 @@ export function CreatePostDialog({
     const [eventDate, setEventDate] = useState("");
     const [location, setLocation] = useState("");
     const [mediaType, setMediaType] = useState<"image" | "video" | null>(null);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [mediaFile, setMediaFile] = useState<File | null>(null);
     const [mediaPreview, setMediaPreview] = useState<string | null>(null);
 
@@ -144,7 +146,14 @@ export function CreatePostDialog({
                         <Label htmlFor="post-type">Post Type</Label>
                         <Select
                             value={type}
-                            onValueChange={(value: any) => setType(value)}
+                            onValueChange={(
+                                value:
+                                    | "DISCUSSION"
+                                    | "PRAYER"
+                                    | "EVENT"
+                                    | "SERMON"
+                                    | "TESTIMONY"
+                            ) => setType(value)}
                         >
                             <SelectTrigger className="bg-background">
                                 <SelectValue />
@@ -245,14 +254,22 @@ export function CreatePostDialog({
                                     <X className="h-4 w-4" />
                                 </Button>
                                 {mediaType === "image" ? (
-                                    <img
-                                        src={mediaPreview || "/placeholder.svg"}
-                                        alt="Preview"
-                                        className="max-w-full h-auto max-h-48 rounded"
-                                    />
+                                    <div className="relative w-full max-h-48 h-48">
+                                        <Image
+                                            src={
+                                                mediaPreview ??
+                                                "/placeholder.svg"
+                                            }
+                                            alt="Preview"
+                                            fill
+                                            className="object-contain rounded"
+                                            unoptimized // important for blob/object URLs
+                                            sizes="(max-width: 768px) 100vw, 700px"
+                                        />
+                                    </div>
                                 ) : (
                                     <video
-                                        src={mediaPreview}
+                                        src={mediaPreview ?? undefined}
                                         controls
                                         className="max-w-full h-auto max-h-48 rounded"
                                     />
@@ -303,10 +320,12 @@ export function CreatePostDialog({
                                 onChange={(e) => setTagInput(e.target.value)}
                                 placeholder="Add a tag..."
                                 className="bg-background"
-                                onKeyPress={(e) =>
-                                    e.key === "Enter" &&
-                                    (e.preventDefault(), addTag())
-                                }
+                                onKeyDown={(e) => {
+                                    if (e.key === "Enter") {
+                                        e.preventDefault();
+                                        addTag();
+                                    }
+                                }}
                             />
                             <Button
                                 type="button"

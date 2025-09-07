@@ -142,7 +142,7 @@ export function UserSettings() {
                         <div className="space-y-0.5">
                             <Label>Show Online Status</Label>
                             <p className="text-sm text-muted-foreground">
-                                Let others see when you're active
+                                Let others see when you&apos;re active
                             </p>
                         </div>
                         <Switch defaultChecked />

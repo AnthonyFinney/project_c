@@ -56,11 +56,11 @@ export default function PrayerPage() {
 
                                 <div className="bg-muted/30 p-4 rounded-lg">
                                     <p className="text-sm text-foreground leading-relaxed">
-                                        "Therefore confess your sins to each
-                                        other and pray for each other so that
-                                        you may be healed. The prayer of a
+                                        &quot;Therefore confess your sins to
+                                        each other and pray for each other so
+                                        that you may be healed. The prayer of a
                                         righteous person is powerful and
-                                        effective." - James 5:16
+                                        effective.&quot; - James 5:16
                                     </p>
                                 </div>
                             </div>
