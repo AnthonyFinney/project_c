@@ -1,0 +1,227 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens to match Renaissance design brief */
+  --background: #f5f1e7;
+  /* Parchment background */
+  --foreground: #4a3c2a;
+  /* Primary text color */
+  --card: #ffffff;
+  /* Card background */
+  --card-foreground: #4a3c2a;
+  /* Card text color */
+  --popover: #ffffff;
+  /* Popover background */
+  --popover-foreground: #4a3c2a;
+  /* Popover text color */
+  --primary: #cdaa7d;
+  /* Gilt gold for buttons and highlights */
+  --primary-foreground: #ffffff;
+  /* White text on primary */
+  --secondary: #4a3c2a;
+  /* Deep brown for links */
+  --secondary-foreground: #ffffff;
+  /* White text on secondary */
+  --muted: #bfa89d;
+  /* Muted text */
+  --muted-foreground: #4a3c2a;
+  /* Muted text color */
+  --accent: #4a3c2a;
+  /* Deep brown for accents */
+  --accent-foreground: #cdaa7d;
+  /* Gold text on accent */
+  --destructive: #c9492c;
+  /* Vermillion for destructive actions */
+  --destructive-foreground: #ffffff;
+  /* White text for destructive */
+  --border: #d1bfa6;
+  /* Soft border color */
+  --input: #ffffff;
+  /* Input field background */
+  --ring: #cdaa7d;
+  /* Ring color for focus states */
+  --chart-1: #cdaa7d;
+  /* Chart color */
+  --chart-2: #bfa89d;
+  /* Chart color */
+  --chart-3: #4a3c2a;
+  /* Chart color */
+  --chart-4: #f5f1e7;
+  /* Chart color */
+  --chart-5: #ffffff;
+  /* Chart color */
+  --radius: 0.75rem;
+  /* Rounded corners for elements */
+  --sidebar: #f5f1e7;
+  /* Sidebar background */
+  --sidebar-foreground: #4a3c2a;
+  /* Sidebar text color */
+  --sidebar-primary: #cdaa7d;
+  /* Sidebar primary color */
+  --sidebar-primary-foreground: #ffffff;
+  /* Sidebar primary text */
+  --sidebar-accent: #4a3c2a;
+  /* Sidebar accent color */
+  --sidebar-accent-foreground: #cdaa7d;
+  /* Sidebar accent text */
+  --sidebar-border: #d1bfa6;
+  /* Sidebar border color */
+  --sidebar-ring: #cdaa7d;
+  /* Sidebar focus ring */
+
+  /* Added Renaissance-specific design tokens */
+  --parchment: #f4ede3;
+  --ink: #1f252e;
+  --gilt: #c4a661;
+  --ultramarine: #2151a1;
+  --vermillion: #c9492c;
+  --olive: #6b7b56;
+  --smoke: #e7dfcf;
+  --shadow: #d9d0bf;
+  --frame-shadow: 0 0 0 1px rgba(196, 166, 97, 0.35), inset 0 1px 0 #fff;
+  --font-serif: "EB Garamond", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+}
+
+.dark {
+  /* Updated dark mode colors for "Midnight Chapel" theme */
+  --background: #121418;
+  /* Deep charcoal */
+  --foreground: #eae6dc;
+  /* Light parchment text */
+  --card: #1a1f24;
+  /* Dark card background */
+  --card-foreground: #eae6dc;
+  /* Light card text */
+  --popover: #1a1f24;
+  /* Dark popover background */
+  --popover-foreground: #eae6dc;
+  /* Light popover text */
+  --primary: #a08660;
+  /* Subdued gold */
+  --primary-foreground: #121418;
+  /* Dark text on primary */
+  --secondary: #2a2f35;
+  /* Dark secondary */
+  --secondary-foreground: #eae6dc;
+  /* Light text on secondary */
+  --muted: #2a2f35;
+  /* Dark muted */
+  --muted-foreground: #9b9084;
+  /* Muted text */
+  --accent: #2a2f35;
+  /* Dark accent */
+  --accent-foreground: #a08660;
+  /* Gold text on accent */
+  --destructive: #8b3a2c;
+  /* Dark vermillion */
+  --destructive-foreground: #eae6dc;
+  /* Light text for destructive */
+  --border: #2a2f35;
+  /* Dark border */
+  --input: #1a1f24;
+  /* Dark input background */
+  --ring: #a08660;
+  /* Gold ring for focus */
+  --chart-1: #a08660;
+  --chart-2: #9b9084;
+  --chart-3: #2a2f35;
+  --chart-4: #1a1f24;
+  --chart-5: #121418;
+  --sidebar: #121418;
+  --sidebar-foreground: #eae6dc;
+  --sidebar-primary: #a08660;
+  --sidebar-primary-foreground: #121418;
+  --sidebar-accent: #2a2f35;
+  --sidebar-accent-foreground: #a08660;
+  --sidebar-border: #2a2f35;
+  --sidebar-ring: #a08660;
+
+  /* Updated Renaissance tokens for dark mode */
+  --parchment: #121418;
+  --ink: #eae6dc;
+  --shadow: #2a2f35;
+  --gilt: #a08660;
+}
+
+@theme inline {
+  /* Added serif font support for EB Garamond */
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* Added subtle parchment texture overlay */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D9D0BF' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Added Renaissance typography styles */
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  /* Added drop cap styling for illuminated initials */
+  .drop-cap::first-letter {
+    @apply float-left mr-2 text-4xl font-bold text-primary leading-none;
+    font-family: var(--font-serif);
+    margin-top: 0.1em;
+  }
+
+  /* Added fresco card styling */
+  .fresco-card {
+    @apply rounded-xl border-2 bg-card shadow-lg;
+    border-color: var(--shadow);
+    box-shadow: var(--frame-shadow);
+  }
+
+  /* Added arch styling */
+  .arch-bottom {
+    clip-path: ellipse(100% 85% at 50% 0%);
+  }
+}
