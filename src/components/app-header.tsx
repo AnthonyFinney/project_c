@@ -26,7 +26,7 @@ export function AppHeader() {
                                     <div className="w-4 h-4 bg-primary-foreground rounded-full" />
                                 </div>
                                 <h1 className="font-serif text-xl font-bold text-foreground hidden sm:block">
-                                    Fellowship
+                                    Renaissance Fellowship
                                 </h1>
                             </div>
                         </div>
